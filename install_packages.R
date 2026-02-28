@@ -19,7 +19,7 @@ metanr_packages <- function(){
 
   cat("Library path set to:", lib_path, "\n\n")
 
-  metr_pkgs <- c("shiny", "shinydashboard", "dashboardthemes", "shinycustomloader", "shinyalert", "shinyjs", "ggplot2", "ggpubr", "DT", "visNetwork", "htmlwidgets","plyr", "circlize", "ComplexHeatmap")
+  metr_pkgs <- c("shiny", "shinydashboard", "dashboardthemes", "shinycustomloader", "shinyalert", "shinyjs", "ggplot2", "ggpubr", "DT", "visNetwork", "htmlwidgets","plyr", "circlize", "ComplexHeatmap", "markdown", "knitr", "rmarkdown")
 
   list_installed <- installed.packages()
 

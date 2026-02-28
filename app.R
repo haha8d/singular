@@ -1,4 +1,8 @@
 ## app.R ##
+
+# 设置库路径
+source("setup.R")
+
 library(shiny)
 library(shinydashboard)
 library(dashboardthemes)
