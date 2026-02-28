@@ -1,0 +1,33 @@
+# R specific
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+*.rproj
+
+# Package libraries
+library/
+*.libPaths
+
+# OS specific
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+debug_*.R
+install_force.R
+
+# Data files (if large)
+# Uncomment if needed
+# Visualization-data/*.csv
