@@ -3,20 +3,23 @@
 # 设置库路径
 source("setup.R")
 
-library(shiny)
-library(shinydashboard)
-library(dashboardthemes)
-library(shinycustomloader)
-library(shinyalert)
-library(shinyjs)
-library(ggplot2)
-library(ggpubr)
-library(DT)
-library(circlize)#CCC-Interactome
-library(ComplexHeatmap)#CCC-Interactome
-library(visNetwork)#GRN
-library(htmlwidgets)#GRN
-library(plyr)#GRN
+# 加载包（suppressPackageStartupMessages 会抑制包的启动信息，但不会隐藏错误）
+suppressPackageStartupMessages({
+  library(shiny)
+  library(shinydashboard)
+  library(dashboardthemes)
+  library(shinycustomloader)
+  library(shinyalert)
+  library(shinyjs)
+  library(ggplot2)
+  library(ggpubr)
+  library(DT)
+  library(circlize)#CCC-Interactome
+  library(ComplexHeatmap)#CCC-Interactome
+  library(visNetwork)#GRN
+  library(htmlwidgets)#GRN
+  library(plyr)#GRN
+})
 
 #Source the helper function
 source("www/cell_cell_com_interactome.R")
