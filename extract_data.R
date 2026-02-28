@@ -5,34 +5,51 @@ extract_data <- function() {
 
   cat("=== Extracting Data Files ===\n\n")
 
-  compressed_files <- list(
-    "Visualization-data/GO/GO.csv.zip" = "Visualization-data/GO/GO.csv"
-  )
+  zip_file <- "Visualization-data.zip"
+  target_dir <- "Visualization-data"
 
-  for (zip_file in names(compressed_files)) {
-    target_file <- compressed_files[[zip_file]]
+  # 检查是否需要解压
+  need_extraction <- FALSE
 
-    if (file.exists(target_file)) {
-      cat(sprintf("✓ %s already exists, skipping...\n", target_file))
-    } else if (file.exists(zip_file)) {
-      cat(sprintf("Extracting %s to %s...\n", zip_file, target_file))
+  if (!dir.exists(target_dir)) {
+    cat("Visualization-data directory not found. Extracting...\n")
+    need_extraction <- TRUE
+  } else {
+    # 检查关键数据文件是否存在
+    required_files <- c(
+      "GO/GO.csv",
+      "Pathway/pathways.csv",
+      "GRN/GRNI.csv"
+    )
 
-      # 使用 R 的 unzip 函数解压
-      unzip(zip_file, exdir = dirname(target_file))
-
-      if (file.exists(target_file)) {
-        cat(sprintf("✓ Successfully extracted: %s\n", target_file))
-      } else {
-        cat(sprintf("✗ Failed to extract: %s\n", target_file))
+    for (f in required_files) {
+      file_path <- file.path(target_dir, f)
+      if (!file.exists(file_path)) {
+        cat(sprintf("Missing file: %s\n", file_path))
+        need_extraction <- TRUE
+        break
       }
-    } else {
-      cat(sprintf("✗ Compressed file not found: %s\n", zip_file))
     }
-    cat("\n")
+
+    if (!need_extraction) {
+      cat("All data files already exist. Skipping extraction.\n\n")
+    }
   }
 
-  cat("=== Data Extraction Complete ===\n")
+  if (need_extraction && file.exists(zip_file)) {
+    cat(sprintf("Extracting %s...\n", zip_file))
+
+    # 使用 R 的 unzip 函数解压
+    unzip(zip_file, exdir = ".")
+
+    cat("✓ Data extraction complete!\n")
+  } else if (need_extraction) {
+    cat(sprintf("✗ Compressed file not found: %s\n", zip_file))
+  }
+
+  cat("\n=== Data Extraction Complete ===\n")
 }
 
 # 执行解压
 extract_data()
+

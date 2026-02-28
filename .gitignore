@@ -28,8 +28,7 @@ desktop.ini
 debug_*.R
 install_force.R
 
-# Data files - ignore large CSV files, keep compressed versions
-Visualization-data/GO/GO.csv
-Visualization-data/Pathway/pathways.csv
-Visualization-data/GRN/GRNI.csv
+# Data files - ignore entire data directory (compressed version is kept)
+Visualization-data/
+
 
