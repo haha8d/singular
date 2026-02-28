@@ -55,3 +55,11 @@ metanr_packages <- function(){
 
 # 执行安装
 metanr_packages()
+
+# 解压数据文件
+if (file.exists("extract_data.R")) {
+  source("extract_data.R")
+}
+
+# 执行安装
+metanr_packages()
