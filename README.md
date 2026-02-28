@@ -88,6 +88,11 @@ Email: mohamed.soudy@uni.lu
 - Dharmaratne, M., Kulkarni, A. S., Taherian Fard, A. & Mar, J. C. scShapes: a statistical framework for identifying distribution shapes in single-cell RNA-sequencing data. GigaScience 12, giac126 (2022).
 - Choi, J. et al. Intestinal stem cell aging at single‐cell resolution: Transcriptional perturbations alter cell developmental trajectory reversed by gerotherapeutics. Aging Cell 22, e13802 (2023).
 
+## Source Repository
+
+This is a mirror of the original project hosted at:
+https://gitlab.com/uniluxembourg/lcsb/cbg/singular/
+
 ## License
 
 This project is based on original work by the Computational Biology team at Luxembourg Centre for Systems Biomedicine.
