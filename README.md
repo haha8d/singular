@@ -12,46 +12,46 @@ Current rejuvenation strategies, which range from calorie restriction to in vivo
 
 ## Getting Started
 
-To install and run the app follow the following instructions:
+To install and run the app, follow these steps:
 
-1. Clone the repository:
+### 1. Install R
+
+Download and install R from [https://www.r-project.org/](https://www.r-project.org/)
+
+### 2. Clone the repository
 
 ```bash
 git clone https://github.com/haha8d/singular.git
 cd singular
 ```
 
-2. Install required packages by running:
+### 3. Install required R packages
+
+Run the package installation script:
 
 ```r
 source("install_packages.R")
 ```
 
-Or manually install using:
+This script will:
+- Automatically set up a user library directory (avoiding permission issues)
+- Use the Tsinghua University mirror for faster downloads in China
+- Install all required packages:
+  - CRAN packages: shiny, shinydashboard, dashboardthemes, shinycustomloader, shinyalert, shinyjs, ggplot2, ggpubr, DT, visNetwork, htmlwidgets, plyr
+  - Bioconductor packages: circlize, ComplexHeatmap
 
-```r
-metanr_packages <- function(){
-  metr_pkgs <- c("shiny", "shinydashboard", "dashboardthemes", "shinycustomloader", "shinyalert", "shinyjs", "ggplot2", "ggpubr", "DT", "visNetwork", "htmlwidgets","plyr", "circlize", "ComplexHeatmap")
-  list_installed <- installed.packages()
-  new_pkgs <- subset(metr_pkgs, !(metr_pkgs %in% list_installed[, "Package"]))
-  if(length(new_pkgs)!=0){
-    if (!requireNamespace("BiocManager", quietly = TRUE))
-      install.packages("BiocManager")
-    BiocManager::install(new_pkgs)
-    print(c(new_pkgs, " packages added..."))
-  }
-  if((length(new_pkgs)<1)){
-    print("No new packages added...")
-  }
-}
-
-metanr_packages()
-```
-
-3. Run the app:
+### 4. Run the application
 
 ```r
 source("app.R")
+```
+
+### Verify Package Installation
+
+You can verify all packages are installed correctly by running:
+
+```r
+source("check_packages.R")
 ```
 
 ## The Team
